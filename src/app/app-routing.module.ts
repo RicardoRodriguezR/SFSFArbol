@@ -5,8 +5,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 
 const routes: Routes = [
-  {path:'body-component', component:BodyComponentComponent},
-  {path:'TreeViewComponent', component:TreeViewComponent}
+    {path:'body-component', component:BodyComponentComponent},
+    {path:'TreeViewComponent', component:TreeViewComponent}
 ];
 
 @NgModule({

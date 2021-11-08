@@ -1,0 +1,44 @@
+<div class="Container">
+  <div class="card-content">
+    <form [formGroup]="formInvitaccion" (submit)="">
+      <div class="form-group">
+        <select>
+          <option value="invitacion">Invitacion</option>
+          <option value="darBaja">Dar de baja</option>
+        </select>
+        <label>Operacion</label>
+      </div>
+      <div class="form-group">
+        <input id="email" type="email" class="validate">
+          <label for="email">Email</label>
+      </div>
+      <div class="form-group">
+        <input id="email" type="email" class="validate">
+          <label for="email">Email</label>
+      </div>
+      <select>
+        <option value="colombia">Colombia</option>
+        <option value="mexico">Mexico</option>
+        <option value="chile">Chile</option>
+        <option value="guatemala">Guatemala</option>
+      </select>
+      <label>Division group</label>
+      <div class="form-group">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" formControlName="nomnbre">
+      </div>
+      <p>
+        <label for="reenviar">Reenviar</label>
+        <label>
+          <input type="checkbox" />
+          <span>Si</span>
+        </label>
+        <label>
+          <input type="checkbox" />
+          <span>No</span>
+        </label>
+      </p>
+      <button class="btn waves-effect waves-light cyan accent-4">Consultar</button>
+    </form>
+  </div>
+</div>

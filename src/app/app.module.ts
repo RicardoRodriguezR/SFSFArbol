@@ -11,6 +11,7 @@ import { MatTreeModule } from '@angular/material/tree';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { NgForIn } from './ng-for-in.directive';
+import { InvitacionSOAPComponent } from './invitacion-soap/invitacion-soap.component';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { NgForIn } from './ng-for-in.directive';
     TreeViewComponent,
     MytreeComponent,
     NgForIn,
+    InvitacionSOAPComponent,
   ],
   imports: [
     BrowserModule,
