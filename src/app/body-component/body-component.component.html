@@ -1,0 +1,124 @@
+<div class="container contentList">
+  <div class="card">
+    <div class="card-content">
+      <span class="card-title">{{titulo}}</span>
+    </div>
+    <div class="card-content">
+      <form [formGroup]="formQuery" (submit)="createQuerySFSF()">
+        <div class="form-group">
+          <label for="Entity">Entidad</label>
+          <input type="text" id="entity" formControlName="entity">
+        </div>
+        <div class="form-group">
+          <label for="Select">Selector</label>
+          <input type="text" id="select" formControlName="select">
+        </div>
+        <div class="form-group">
+          <label for="Expand">Expacion</label>
+          <input type="text" id="expand" formControlName="expand">
+        </div>
+        <div class="form-group">
+          <label for="Filter">Filtro</label>
+          <input type="text" id="filter" formControlName="filter">
+        </div>
+        <button class="btn waves-effect waves-light cyan accent-4">Consultar</button>
+      </form>
+    </div>
+  </div>
+</div>
+<div class="container contentList">
+  <div class="card">
+    <div class="card-content">
+      <span class="card-title">{{tituloList}}</span>
+    </div>
+    <table class="centered" *ngIf="true">
+      <thead>
+        <tr>
+          <th>Num.</th>
+          <th *ngFor="let header of headerTable">
+            {{header}}
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let body of viewBody; let i=index">
+          <td>{{i+1}}</td>
+          <td *ngFor="let header of headerTable">
+            {{body[header]}}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<!--<div *ngFor="let body of viewBody">
+          <p>--</p>
+          <div *ngFor="let item of body|keyvalue">
+            <pre>{{item.value}}</pre>
+          </div>
+          <p>--</p>
+          <br>
+        </div>-->
+<!--<table class="centered" *ngIf="true">
+          <thead>
+              <tr>
+                <th>Num.</th>
+                <th *ngFor="let header of headerTable">
+                  {{header}}
+                </th>
+              </tr>
+          </thead>-->
+<!--<tbody>
+            <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
+              <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle matTreeNodePadding>
+                <button mat-icon-button disabled></button>
+                {{node.name}}
+                  <tr>
+                  <td *ngFor="let _child in node.name">
+                  {{node.name[_child]}}
+                  </td>
+                </tr>
+              </mat-tree-node>
+              <mat-tree-node *matTreeNodeDef="let node; when: hasChild" matTreeNodePadding>
+                <button mat-icon-button matTreeNodeToggle
+                  [attr.aria-label]="'Toggle ' + node.name">
+                <mat-icon class="mat-icon-rtl-mirror">
+                  {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+                </mat-icon>
+                </button>
+                <tr>
+                  {{node.name.departmentNav|json}}
+                  <div *ngFor="let _child of node.FODepartment"></div> -->
+<!-- <div *ngFor="let iterate of dataSource.data">
+                    <div *ngFor="let chilName of iterate.children">
+                      <pre *ngFor="let obj in chilName.name.FODepartment">{{obj+': '+chilName.name.FODepartment[obj]}}</pre>
+                      <p>----------------------------------------------------</p>
+                    </div>
+                  </div> -->
+<!-- <td *ngFor="let headerChil of listChil">
+                    {{node.name[headerChil]}}
+                  </td>
+                </tr>
+              </mat-tree-node>
+            </mat-tree>
+          </tbody>
+      </table>-->
+<!--<mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
+          <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle matTreeNodePadding>
+            <button mat-icon-button disabled></button>
+            <p *ngFor="let header of headerTable">
+              {{node.name[header]}}
+            </p>
+          </mat-tree-node>
+          <mat-tree-node *matTreeNodeDef="let node; when: hasChild" matTreeNodePadding>
+            <button mat-icon-button matTreeNodeToggle
+              [attr.aria-label]="'Toggle ' + node.name">
+            <mat-icon class="mat-icon-rtl-mirror">
+              {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+            </mat-icon>
+            </button>
+            {{node.name.costCenter}}
+          </mat-tree-node>
+        </mat-tree>
+    </div>
+</div>-->
