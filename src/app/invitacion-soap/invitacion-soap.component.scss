@@ -1,0 +1,42 @@
+.Container{
+    margin-top: 20px;;
+}
+
+.card-title{
+    font-weight: bolder;
+    color: rgb(0, 0, 0);
+}
+
+.card{
+    padding: 15px !important;
+}
+
+.card-content{
+    margin-bottom: 0px !important;
+}
+
+.box{
+    display: inline-block;
+    position:  static;
+    width: 100%;
+    text-align: justify;
+}
+
+.boxSelect{
+    width: 100%;
+    float: left;
+    margin-right: 20px;
+}
+
+.contentList{
+    width:100% !important;
+    display: inline-table;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+select {
+    display: block;
+}
+

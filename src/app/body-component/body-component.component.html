@@ -1,4 +1,4 @@
-<div class="container contentList">
+<div class="Container contentList">
   <div class="card">
     <div class="card-content">
       <span class="card-title">{{titulo}}</span>
@@ -25,33 +25,32 @@
       </form>
     </div>
   </div>
-</div>
-<div class="container contentList">
-  <div class="card">
-    <div class="card-content">
-      <span class="card-title">{{tituloList}}</span>
+  <div class="container contentList">
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">{{tituloList}}</span>
+      </div>
+      <table class="centered" *ngIf="true">
+        <thead>
+          <tr>
+            <th>Num.</th>
+            <th *ngFor="let header of headerTable">
+              {{header}}
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let body of viewBody; let i=index">
+            <td>{{i+1}}</td>
+            <td *ngFor="let header of headerTable">
+              {{body[header]}}
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-    <table class="centered" *ngIf="true">
-      <thead>
-        <tr>
-          <th>Num.</th>
-          <th *ngFor="let header of headerTable">
-            {{header}}
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let body of viewBody; let i=index">
-          <td>{{i+1}}</td>
-          <td *ngFor="let header of headerTable">
-            {{body[header]}}
-          </td>
-        </tr>
-      </tbody>
-    </table>
   </div>
-</div>
-<!--<div *ngFor="let body of viewBody">
+  <!--<div *ngFor="let body of viewBody">
           <p>--</p>
           <div *ngFor="let item of body|keyvalue">
             <pre>{{item.value}}</pre>
@@ -59,7 +58,7 @@
           <p>--</p>
           <br>
         </div>-->
-<!--<table class="centered" *ngIf="true">
+  <!--<table class="centered" *ngIf="true">
           <thead>
               <tr>
                 <th>Num.</th>
@@ -68,7 +67,7 @@
                 </th>
               </tr>
           </thead>-->
-<!--<tbody>
+  <!--<tbody>
             <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
               <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle matTreeNodePadding>
                 <button mat-icon-button disabled></button>
@@ -89,13 +88,13 @@
                 <tr>
                   {{node.name.departmentNav|json}}
                   <div *ngFor="let _child of node.FODepartment"></div> -->
-<!-- <div *ngFor="let iterate of dataSource.data">
+  <!-- <div *ngFor="let iterate of dataSource.data">
                     <div *ngFor="let chilName of iterate.children">
                       <pre *ngFor="let obj in chilName.name.FODepartment">{{obj+': '+chilName.name.FODepartment[obj]}}</pre>
                       <p>----------------------------------------------------</p>
                     </div>
                   </div> -->
-<!-- <td *ngFor="let headerChil of listChil">
+  <!-- <td *ngFor="let headerChil of listChil">
                     {{node.name[headerChil]}}
                   </td>
                 </tr>
@@ -103,7 +102,7 @@
             </mat-tree>
           </tbody>
       </table>-->
-<!--<mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
+  <!--<mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
           <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle matTreeNodePadding>
             <button mat-icon-button disabled></button>
             <p *ngFor="let header of headerTable">

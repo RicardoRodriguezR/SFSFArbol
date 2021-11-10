@@ -12,7 +12,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { NgForIn } from './ng-for-in.directive';
 import { InvitacionSOAPComponent } from './invitacion-soap/invitacion-soap.component';
-
+import { MatSelectModule } from '@angular/material/select';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,10 @@ import { InvitacionSOAPComponent } from './invitacion-soap/invitacion-soap.compo
     ReactiveFormsModule,
     MatTreeModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    MatSelectModule,
+    BrowserAnimationsModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

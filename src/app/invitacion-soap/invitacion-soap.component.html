@@ -1,44 +1,49 @@
-<div class="Container">
-  <div class="card-content">
-    <form [formGroup]="formInvitaccion" (submit)="">
-      <div class="form-group">
-        <select>
-          <option value="invitacion">Invitacion</option>
-          <option value="darBaja">Dar de baja</option>
-        </select>
-        <label>Operacion</label>
-      </div>
-      <div class="form-group">
-        <input id="email" type="email" class="validate">
-          <label for="email">Email</label>
-      </div>
-      <div class="form-group">
-        <input id="email" type="email" class="validate">
-          <label for="email">Email</label>
-      </div>
-      <select>
-        <option value="colombia">Colombia</option>
-        <option value="mexico">Mexico</option>
-        <option value="chile">Chile</option>
-        <option value="guatemala">Guatemala</option>
-      </select>
-      <label>Division group</label>
-      <div class="form-group">
-        <label for="nombre">Nombre</label>
-        <input type="text" id="nombre" formControlName="nomnbre">
-      </div>
-      <p>
-        <label for="reenviar">Reenviar</label>
-        <label>
-          <input type="checkbox" />
-          <span>Si</span>
-        </label>
-        <label>
-          <input type="checkbox" />
-          <span>No</span>
-        </label>
-      </p>
-      <button class="btn waves-effect waves-light cyan accent-4">Consultar</button>
-    </form>
+<div class="Container contentList">
+  <div class="card">
+    <div class="card-content">
+      <span class="card-title">Formulario para invitaciones SURA</span>
+    </div>
+    <div class="card-content">
+      <form [formGroup]="invitationQuery" (submit)="createInvitacion()">
+        <div class="form-group">
+          <label for="operacion">Operacion</label>
+          <select name="Operacion">
+            <option *ngFor="let item1 of operaciones">
+              {{item1.tipo}}
+            </option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="invitedUserEmailAddress">Email del usuario invitado</label>
+          <input type="email" id="invitedUserEmailAddress" formControlName="invitedUserEmailAddress">
+        </div>
+        <div class="form-group">
+          <label for="userPrincipalName">Confirmar email del usuario invitado</label>
+          <input type="email" id="userPrincipalName" formControlName="userPrincipalName">
+        </div>
+        <div class="form-group">
+          <label for="paise">Paises</label>
+          <select name="Paises">
+            <option *ngFor="let item of paises">
+              {{item.name}}
+            </option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="nombre">Nombre de la persona a invitar</label>
+          <input type="text" id="nombre" formControlName="nombre">
+        </div>
+        <p>
+          <label>
+            <input type="checkbox" value="true"/>
+            <span>Si</span>
+          </label>
+          <br>
+        </p>
+        <br>
+        <br>
+        <button class="btn waves-effect waves-light cyan accent-4">Consultar</button>
+      </form>
+    </div>
   </div>
 </div>
