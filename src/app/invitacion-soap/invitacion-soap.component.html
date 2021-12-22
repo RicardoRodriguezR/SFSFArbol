@@ -7,9 +7,10 @@
       <form [formGroup]="invitationQuery" (submit)="createInvitacion()">
         <div class="form-group">
           <label for="operacion">Operacion</label>
-          <select name="Operacion">
-            <option *ngFor="let item1 of operaciones">
-              {{item1.tipo}}
+          <select formControlName="operacion">
+            <option value="">Seleccione una opción</option>
+            <option *ngFor="let operacion of operaciones" value="{{operacion.value}}">
+              {{operacion.tipo}}
             </option>
           </select>
         </div>
@@ -22,8 +23,13 @@
           <input type="email" id="userPrincipalName" formControlName="userPrincipalName">
         </div>
         <div class="form-group">
-          <label for="paise">Paises</label>
-          <select name="Paises">
+          <label for="userPrincipalNameOld">Email para reemplzar la invitacion</label>
+          <input type="email" id="userPrincipalNameOld" formControlName="userPrincipalNameOld">
+        </div>
+        <div class="form-group">
+          <label for="division_grupo">division de grupo</label>
+          <select formControlName="division_grupo">
+            <option value="">Seleccione una opción</option>
             <option *ngFor="let item of paises">
               {{item.name}}
             </option>
@@ -33,13 +39,15 @@
           <label for="nombre">Nombre de la persona a invitar</label>
           <input type="text" id="nombre" formControlName="nombre">
         </div>
-        <p>
-          <label>
-            <input type="checkbox" value="true"/>
-            <span>Si</span>
-          </label>
-          <br>
-        </p>
+        <div class="form-group">
+          <label for="reenvio">Reenvio</label>
+          <select formControlName="reenviar">
+            <option value="">Seleccione una opción</option>
+            <option *ngFor="let reenvio of reenvios">
+              {{reenvio.value}}
+            </option>
+          </select>
+        </div>
         <br>
         <br>
         <button class="btn waves-effect waves-light cyan accent-4">Consultar</button>

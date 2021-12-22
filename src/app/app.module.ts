@@ -5,7 +5,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BodyComponentComponent } from './body-component/body-component.component';
-import { TreeViewComponent } from './tree-view/tree-view.component';
 import { MytreeComponent } from './mytree/mytree.component';
 import { MatTreeModule } from '@angular/material/tree';
 import { MatIconModule } from '@angular/material/icon';
@@ -15,15 +14,16 @@ import { InvitacionSOAPComponent } from './invitacion-soap/invitacion-soap.compo
 import { MatSelectModule } from '@angular/material/select';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule } from '@angular/material/input';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BodyComponentComponent,
-    TreeViewComponent,
     MytreeComponent,
     NgForIn,
     InvitacionSOAPComponent,
+    NavBarComponent,
   ],
   imports: [
     BrowserModule,
